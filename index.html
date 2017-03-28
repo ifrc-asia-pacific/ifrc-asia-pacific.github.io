@@ -8,6 +8,7 @@
     <script src="./js/jquery.jfeed.pack.js"></script>
     <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="./css/flag-icon.min.css" rel="stylesheet" type="text/css">
   </head>
   
   <body>
@@ -42,7 +43,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h1>Information Management Portal</h1>
+            <h1>Information Management Portal (example)</h1>
             <p></p>
             <hr>
             <br>
@@ -156,16 +157,22 @@
         </div>
         <div class="row">
           <div class="col-md-3">
-            <h1>Oceania</h1>
+            <h1 class="text-muted">Oceania</h1>
             <ol contenteditable="true">
               <li>Australia</li>
               <li>Christmas Island Cocos (Keeling) Islands</li>
               <li>Norfolk Island</li>
-              <li>New Zealand</li>
+              <li>
+                <div class="flag-wrapper">
+                  <div class="img-thumbnail flag flag-icon-background flag-icon-nz" title="nz"
+                  id="nz"></div>New Zealand</div>
+              </li>
               <li>Cook Islands</li>
               <li>Niue</li>
               <li>Tokelau</li>
               <li>Melanesia</li>
+              <span class="label label-info">
+                <span class="flag-icon flag-icon-fj"></span>Fiji</span>
               <li>Fiji&nbsp;</li>
               <li>New Caledonia</li>
               <li>Papua New Guinea</li>
@@ -184,7 +191,7 @@
             </ol>
           </div>
           <div class="col-md-3">
-            <h1>South Aisia</h1>
+            <h1 class="text-muted">South Aisia</h1>
             <ol>
               <li>Bangladesh</li>
               <li>Bhutan</li>
@@ -196,7 +203,7 @@
             </ol>
           </div>
           <div class="col-md-3">
-            <h1>Southeast Asia</h1>
+            <h1 class="text-muted">Southeast Asia</h1>
             <ol>
               <li>Brunei</li>
               <li>Cambodia</li>
@@ -212,7 +219,7 @@
             </ol>
           </div>
           <div class="col-md-3">
-            <h1>East Asia</h1>
+            <h1 class="text-muted">East Asia</h1>
             <ol>
               <li>China</li>
               <li>Hong Kong</li>
