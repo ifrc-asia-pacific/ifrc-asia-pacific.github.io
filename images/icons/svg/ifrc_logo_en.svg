@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="70mm" height="40mm" viewBox="0 0 70 40" version="1.1" id="svg34906" inkscape:version="0.92.1 r15371" sodipodi:docname="ifrc_logo_en.svg">
+  <defs id="defs34900" />
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.4" inkscape:cx="-152.41125" inkscape:cy="17.716586" inkscape:document-units="mm" inkscape:current-layer="layer1" showgrid="false" fit-margin-top="0" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:window-width="1920" inkscape:window-height="1057" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" />
+  <metadata id="metadata34903">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-122.65327,-121.32087)">
+    <g id="g38750" transform="matrix(3.7113968,0,0,3.7113968,27.076426,-544.3797)">
+      <rect id="rect5215" height="10.634439" width="18.610268" x="25.877535" y="179.43817" style="fill:#ffffff;stroke-width:0.25173309" />
+      <path id="path5217" d="m 28.004418,184.75542 h 7.01873 m -3.50937,-3.5093 v 7.0187" inkscape:connector-curvature="0" style="fill:none;stroke:#cc0000;stroke-width:2.1268878" />
+      <circle id="circle5219" r="3.6157091" cy="184.75543" cx="39.915016" style="fill:#cc0000;stroke-width:0.25173309" />
+      <circle id="circle5221" r="2.9776428" cy="184.75543" cx="40.978432" style="fill:#ffffff;stroke-width:0.25173309" />
+      <path id="path5223" d="m 26.621938,180.18262 h 17.12145 v 9.1456 h -17.12145 z" inkscape:connector-curvature="0" style="fill:none;stroke:#cc0000;stroke-width:0.31903318" />
+    </g>
+  </g>
+</svg>
