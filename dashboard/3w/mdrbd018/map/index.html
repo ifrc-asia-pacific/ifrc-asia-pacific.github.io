@@ -43,7 +43,7 @@
         <script src="data/BDRCSpointsofinterest_4.js"></script>
         <script>
         var map = L.map('map', {
-            zoomControl:true, maxZoom:19, minZoom:7
+            zoomControl:true, maxZoom:19, minZoom:10
         }).fitBounds([[21.181859044,92.1448333287],[21.1868485803,92.1572465496]]);
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
@@ -260,7 +260,7 @@
         };
         title.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/BDRCSpointsofinterest_4.png" /> BDRCS, points of interest': cluster_BDRCSpointsofinterest_4,'<img src="legend/Floodriskslopesatriskoffailureangle35_3.png" /> Flood risk - slopes at risk of failure (angle >35°)': layer_Floodriskslopesatriskoffailureangle35_3,'<img src="legend/Floodingoutlinehistoricalfeedback_2.png" /> Flooding outline (historical feedback)': layer_Floodingoutlinehistoricalfeedback_2,'<img src="legend/Campsites_1.png" /> Camp sites': layer_Campsites_1,'<img src="legend/Siteswithmovementactivities_0.png" /> Sites (with movement activities)': layer_Siteswithmovementactivities_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/BDRCSpointsofinterest_4.png" /> BDRCS, points of interest': cluster_BDRCSpointsofinterest_4,'<img src="legend/Floodriskslopesatriskoffailureangle35_3.png" /> Flood risk - slopes at risk of failure (angle >35°)': layer_Floodriskslopesatriskoffailureangle35_3,'<img src="legend/Floodingoutlinehistoricalfeedback_2.png" /> Flood risk - outline (historical feedback)': layer_Floodingoutlinehistoricalfeedback_2,'<img src="legend/Campsites_1.png" /> Camp site boundaries': layer_Campsites_1,'<img src="legend/Siteswithmovementactivities_0.png" /> Sites (with movement activities)': layer_Siteswithmovementactivities_0,},{collapsed:false}).addTo(map);
         map.on("zoomend", function(){
 
             if (map.hasLayer(layer_Siteswithmovementactivities_0)) {
