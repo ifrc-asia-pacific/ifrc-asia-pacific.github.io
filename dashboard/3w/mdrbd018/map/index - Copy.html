@@ -43,7 +43,7 @@
         <script src="data/BDRCSpointsofinterest_4.js"></script>
         <script>
         var map = L.map('map', {
-            zoomControl:true, maxZoom:19, minZoom:7
+            zoomControl:true, maxZoom:17, minZoom:1
         }).fitBounds([[21.181859044,92.1448333287],[21.1868485803,92.1572465496]]);
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
@@ -57,7 +57,7 @@
         var bounds_group = new L.featureGroup([]);
         var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>,Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>',
-            maxZoom: 19
+            maxZoom: 17
         });
         basemap0.addTo(map);
         function setBounds() {
