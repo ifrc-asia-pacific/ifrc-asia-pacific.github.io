@@ -254,7 +254,7 @@ map.attributionControl.setPrefix(false)
         };
         title.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/BDRCSpointsofinterest_4.png" /> BDRCS activity locations': cluster_BDRCSpointsofinterest_4,'<img src="legend/Floodriskslopesatriskoffailureangle35_3.png" /> Landslide prone area (>∠35°)': layer_Floodriskslopesatriskoffailureangle35_3,'<img src="legend/Floodingoutlinehistoricalfeedback_2.png" /> Flood prone area': layer_Floodingoutlinehistoricalfeedback_2,'<img src="legend/Campsites_1.png" /> Camp site boundaries': layer_Campsites_1,'<img src="legend/Siteswithmovementactivities_0.png" /> Sites (with movement activities)': layer_Siteswithmovementactivities_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/BDRCSpointsofinterest_4.png" /> BDRCS activity locations': cluster_BDRCSpointsofinterest_4,'<img src="legend/Floodriskslopesatriskoffailureangle35_3.png" /> Potential landslide prone area (∠35°+)': layer_Floodriskslopesatriskoffailureangle35_3,'<img src="legend/Floodingoutlinehistoricalfeedback_2.png" /> Flood prone area (2-3m)': layer_Floodingoutlinehistoricalfeedback_2,'<img src="legend/Campsites_1.png" /> Camp site boundaries': layer_Campsites_1,'<img src="legend/Siteswithmovementactivities_0.png" /> Sites (with movement activities)': layer_Siteswithmovementactivities_0,},{collapsed:false}).addTo(map);
         map.on("zoomend", function(){
 
             if (map.hasLayer(layer_Siteswithmovementactivities_0)) {
