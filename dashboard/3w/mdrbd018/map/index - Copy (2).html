@@ -19,7 +19,7 @@
             margin: 0;
         }
         </style>
-        <title>BDRCS IFRC PMO, flood risk assessment map</title>
+        <title>BDRCS - IFRC PMO, flood risk assessment map</title>
     </head>
     <body>
         <div id="map">
@@ -46,8 +46,8 @@
             zoomControl:true, maxZoom:19, minZoom:10
         }).fitBounds([[21.181859044,92.1448333287],[21.1868485803,92.1572465496]]);
         var hash = new L.Hash(map);
-map.attributionControl.setPrefix(false)
-		var measureControl = new L.Control.Measure({
+        map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        var measureControl = new L.Control.Measure({
             primaryLengthUnit: 'meters',
             secondaryLengthUnit: 'kilometers',
             primaryAreaUnit: 'sqmeters',
@@ -56,6 +56,7 @@ map.attributionControl.setPrefix(false)
         measureControl.addTo(map);
         var bounds_group = new L.featureGroup([]);
         var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>,Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>',
             maxZoom: 19
         });
         basemap0.addTo(map);
@@ -76,13 +77,14 @@ map.attributionControl.setPrefix(false)
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(227,26,28,0.1)',
+                fillColor: 'rgba(227,26,28,0.0503806588235)',
             }
         }
         map.createPane('pane_Siteswithmovementactivities_0');
         map.getPane('pane_Siteswithmovementactivities_0').style.zIndex = 400;
         map.getPane('pane_Siteswithmovementactivities_0').style['mix-blend-mode'] = 'normal';
         var layer_Siteswithmovementactivities_0 = new L.geoJson(json_Siteswithmovementactivities_0, {
+            attribution: '<a href=""></a>',
             pane: 'pane_Siteswithmovementactivities_0',
             onEachFeature: pop_Siteswithmovementactivities_0,
             style: style_Siteswithmovementactivities_0_0,
@@ -102,13 +104,14 @@ map.attributionControl.setPrefix(false)
                 weight: 2.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(100,132,181,0.0)',
+                fillColor: 'rgba(100,132,181,0.1)',
             }
         }
         map.createPane('pane_Campsites_1');
         map.getPane('pane_Campsites_1').style.zIndex = 401;
         map.getPane('pane_Campsites_1').style['mix-blend-mode'] = 'normal';
         var layer_Campsites_1 = new L.geoJson(json_Campsites_1, {
+            attribution: '<a href=""></a>',
             pane: 'pane_Campsites_1',
             onEachFeature: pop_Campsites_1,
             style: style_Campsites_1_0,
@@ -156,6 +159,7 @@ map.attributionControl.setPrefix(false)
         map.getPane('pane_Floodingoutlinehistoricalfeedback_2').style.zIndex = 402;
         map.getPane('pane_Floodingoutlinehistoricalfeedback_2').style['mix-blend-mode'] = 'normal';
         var layer_Floodingoutlinehistoricalfeedback_2 = new L.geoJson.multiStyle(json_Floodingoutlinehistoricalfeedback_2, {
+            attribution: '<a href=""></a>',
             pane: 'pane_Floodingoutlinehistoricalfeedback_2',
             onEachFeature: pop_Floodingoutlinehistoricalfeedback_2,
             styles: [style_Floodingoutlinehistoricalfeedback_2_0,style_Floodingoutlinehistoricalfeedback_2_1,]
@@ -203,6 +207,7 @@ map.attributionControl.setPrefix(false)
         map.getPane('pane_Floodriskslopesatriskoffailureangle35_3').style.zIndex = 403;
         map.getPane('pane_Floodriskslopesatriskoffailureangle35_3').style['mix-blend-mode'] = 'normal';
         var layer_Floodriskslopesatriskoffailureangle35_3 = new L.geoJson.multiStyle(json_Floodriskslopesatriskoffailureangle35_3, {
+            attribution: '<a href=""></a>',
             pane: 'pane_Floodriskslopesatriskoffailureangle35_3',
             onEachFeature: pop_Floodriskslopesatriskoffailureangle35_3,
             styles: [style_Floodriskslopesatriskoffailureangle35_3_0,style_Floodriskslopesatriskoffailureangle35_3_1,]
@@ -227,6 +232,7 @@ map.attributionControl.setPrefix(false)
         map.getPane('pane_BDRCSpointsofinterest_4').style.zIndex = 404;
         map.getPane('pane_BDRCSpointsofinterest_4').style['mix-blend-mode'] = 'normal';
         var layer_BDRCSpointsofinterest_4 = new L.geoJson(json_BDRCSpointsofinterest_4, {
+            attribution: '<a href=""></a>',
             pane: 'pane_BDRCSpointsofinterest_4',
             onEachFeature: pop_BDRCSpointsofinterest_4,
             pointToLayer: function (feature, latlng) {
@@ -238,7 +244,7 @@ map.attributionControl.setPrefix(false)
             },
         });
         var cluster_BDRCSpointsofinterest_4 = new L.MarkerClusterGroup({showCoverageOnHover: true,
-            spiderfyDistanceMultiplier: 3});
+            spiderfyDistanceMultiplier: 2});
         cluster_BDRCSpointsofinterest_4.addLayer(layer_BDRCSpointsofinterest_4);
 
         bounds_group.addLayer(layer_BDRCSpointsofinterest_4);
@@ -254,7 +260,7 @@ map.attributionControl.setPrefix(false)
         };
         title.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/BDRCSpointsofinterest_4.png" /> BDRCS activity locations': cluster_BDRCSpointsofinterest_4,'<img src="legend/Floodriskslopesatriskoffailureangle35_3.png" /> Landslide prone area (>∠35°)': layer_Floodriskslopesatriskoffailureangle35_3,'<img src="legend/Floodingoutlinehistoricalfeedback_2.png" /> Flood prone area': layer_Floodingoutlinehistoricalfeedback_2,'<img src="legend/Campsites_1.png" /> Camp site boundaries': layer_Campsites_1,'<img src="legend/Siteswithmovementactivities_0.png" /> Sites (with movement activities)': layer_Siteswithmovementactivities_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/BDRCSpointsofinterest_4.png" /> BDRCS, points of interest': cluster_BDRCSpointsofinterest_4,'<img src="legend/Floodriskslopesatriskoffailureangle35_3.png" /> Flood risk - slopes at risk of failure (angle >35°)': layer_Floodriskslopesatriskoffailureangle35_3,'<img src="legend/Floodingoutlinehistoricalfeedback_2.png" /> Flood risk - outline (historical feedback)': layer_Floodingoutlinehistoricalfeedback_2,'<img src="legend/Campsites_1.png" /> Camp site boundaries': layer_Campsites_1,'<img src="legend/Siteswithmovementactivities_0.png" /> Sites (with movement activities)': layer_Siteswithmovementactivities_0,},{collapsed:false}).addTo(map);
         map.on("zoomend", function(){
 
             if (map.hasLayer(layer_Siteswithmovementactivities_0)) {
