@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="http://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <link rel="stylesheet" href="css/leaflet-measure.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="http://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+        <script src="js/multi-style-layer.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-measure.js"></script>
+        <script src="data/Siteswithmovementactivities_0.js"></script>
+        <script src="data/Sitesnocurrentmovementactivities_1.js"></script>
+        <script src="data/Campsites_2.js"></script>
+        <script src="data/Floodingoutlinehistoricalfeedback_3.js"></script>
+        <script src="data/Floodriskslopesatriskoffailureangle35_4.js"></script>
+        <script src="data/bdg_pmo_ifrc_resources_2018_0215_5.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:17, minZoom:1
+        }).fitBounds([[21.1916473472,92.1300050857],[21.2027436374,92.1576133963]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        var measureControl = new L.Control.Measure({
+            primaryLengthUnit: 'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'sqmeters',
+            secondaryAreaUnit: 'hectares'
+        });
+        measureControl.addTo(map);
+        var bounds_group = new L.featureGroup([]);
+        var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>,Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>',
+            maxZoom: 17
+        });
+        basemap0.addTo(map);
+        function setBounds() {
+        }
+        function pop_Siteswithmovementactivities_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CiC_Camp'] !== null ? Autolinker.link(String(feature.properties['CiC_Camp'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Camp_ID'] !== null ? Autolinker.link(String(feature.properties['Camp_ID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['orig_ogc_f'] !== null ? Autolinker.link(String(feature.properties['orig_ogc_f'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Siteswithmovementactivities_0_0() {
+            return {
+                pane: 'pane_Siteswithmovementactivities_0',
+                opacity: 1,
+                color: 'rgba(175,179,138,0.494117647059)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(227,26,28,0.494117647059)',
+            }
+        }
+        function style_Siteswithmovementactivities_0_1() {
+            return {
+                pane: 'pane_Siteswithmovementactivities_0',
+            }
+        }
+        map.createPane('pane_Siteswithmovementactivities_0');
+        map.getPane('pane_Siteswithmovementactivities_0').style.zIndex = 400;
+        map.getPane('pane_Siteswithmovementactivities_0').style['mix-blend-mode'] = 'normal';
+        var layer_Siteswithmovementactivities_0 = new L.geoJson.multiStyle(json_Siteswithmovementactivities_0, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Siteswithmovementactivities_0',
+            onEachFeature: pop_Siteswithmovementactivities_0,
+            styles: [style_Siteswithmovementactivities_0_0,style_Siteswithmovementactivities_0_1,]
+        });
+        bounds_group.addLayer(layer_Siteswithmovementactivities_0);
+        function pop_Sitesnocurrentmovementactivities_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CiC_Camp'] !== null ? Autolinker.link(String(feature.properties['CiC_Camp'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Camp_ID'] !== null ? Autolinker.link(String(feature.properties['Camp_ID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['orig_ogc_f'] !== null ? Autolinker.link(String(feature.properties['orig_ogc_f'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Sitesnocurrentmovementactivities_1_0() {
+            return {
+                pane: 'pane_Sitesnocurrentmovementactivities_1',
+                opacity: 1,
+                color: 'rgba(175,179,138,0.5)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(229,229,229,0.5)',
+            }
+        }
+        function style_Sitesnocurrentmovementactivities_1_1() {
+            return {
+                pane: 'pane_Sitesnocurrentmovementactivities_1',
+            }
+        }
+        map.createPane('pane_Sitesnocurrentmovementactivities_1');
+        map.getPane('pane_Sitesnocurrentmovementactivities_1').style.zIndex = 401;
+        map.getPane('pane_Sitesnocurrentmovementactivities_1').style['mix-blend-mode'] = 'normal';
+        var layer_Sitesnocurrentmovementactivities_1 = new L.geoJson.multiStyle(json_Sitesnocurrentmovementactivities_1, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Sitesnocurrentmovementactivities_1',
+            onEachFeature: pop_Sitesnocurrentmovementactivities_1,
+            styles: [style_Sitesnocurrentmovementactivities_1_0,style_Sitesnocurrentmovementactivities_1_1,]
+        });
+        bounds_group.addLayer(layer_Sitesnocurrentmovementactivities_1);
+        function pop_Campsites_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CiC_Camp'] !== null ? Autolinker.link(String(feature.properties['CiC_Camp'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Camp_ID'] !== null ? Autolinker.link(String(feature.properties['Camp_ID'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Campsites_2_0() {
+            return {
+                pane: 'pane_Campsites_2',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '10,5',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(100,132,181,0.0)',
+            }
+        }
+        map.createPane('pane_Campsites_2');
+        map.getPane('pane_Campsites_2').style.zIndex = 402;
+        map.getPane('pane_Campsites_2').style['mix-blend-mode'] = 'normal';
+        var layer_Campsites_2 = new L.geoJson(json_Campsites_2, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Campsites_2',
+            onEachFeature: pop_Campsites_2,
+            style: style_Campsites_2_0,
+        });
+        bounds_group.addLayer(layer_Campsites_2);
+        map.addLayer(layer_Campsites_2);
+        function pop_Floodingoutlinehistoricalfeedback_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DN'] !== null ? Autolinker.link(String(feature.properties['DN'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['orig_ogc_f'] !== null ? Autolinker.link(String(feature.properties['orig_ogc_f'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        var pattern_Floodingoutlinehistoricalfeedback_3_0 = new L.StripePattern({
+            weight: 0.52,
+            spaceWeight: 1.5,
+            color: '#1f78b4',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 315
+        });
+        pattern_Floodingoutlinehistoricalfeedback_3_0.addTo(map);
+        function style_Floodingoutlinehistoricalfeedback_3_0() {
+            return {
+                pane: 'pane_Floodingoutlinehistoricalfeedback_3',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_Floodingoutlinehistoricalfeedback_3_0
+            }
+        }
+        var pattern_Floodingoutlinehistoricalfeedback_3_1 = new L.StripePattern({
+            weight: 0.52,
+            spaceWeight: 1.5,
+            color: '#0000ff',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 225
+        });
+        pattern_Floodingoutlinehistoricalfeedback_3_1.addTo(map);
+        function style_Floodingoutlinehistoricalfeedback_3_1() {
+            return {
+                pane: 'pane_Floodingoutlinehistoricalfeedback_3',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_Floodingoutlinehistoricalfeedback_3_1
+            }
+        }
+        map.createPane('pane_Floodingoutlinehistoricalfeedback_3');
+        map.getPane('pane_Floodingoutlinehistoricalfeedback_3').style.zIndex = 403;
+        map.getPane('pane_Floodingoutlinehistoricalfeedback_3').style['mix-blend-mode'] = 'normal';
+        var layer_Floodingoutlinehistoricalfeedback_3 = new L.geoJson.multiStyle(json_Floodingoutlinehistoricalfeedback_3, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Floodingoutlinehistoricalfeedback_3',
+            onEachFeature: pop_Floodingoutlinehistoricalfeedback_3,
+            styles: [style_Floodingoutlinehistoricalfeedback_3_0,style_Floodingoutlinehistoricalfeedback_3_1,]
+        });
+        bounds_group.addLayer(layer_Floodingoutlinehistoricalfeedback_3);
+        map.addLayer(layer_Floodingoutlinehistoricalfeedback_3);
+        function pop_Floodriskslopesatriskoffailureangle35_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape_Leng'] !== null ? Autolinker.link(String(feature.properties['Shape_Leng'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape_Area'] !== null ? Autolinker.link(String(feature.properties['Shape_Area'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        var pattern_Floodriskslopesatriskoffailureangle35_4_0 = new L.StripePattern({
+            weight: 0.52,
+            spaceWeight: 1.5,
+            color: '#ff7f00',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 315
+        });
+        pattern_Floodriskslopesatriskoffailureangle35_4_0.addTo(map);
+        function style_Floodriskslopesatriskoffailureangle35_4_0() {
+            return {
+                pane: 'pane_Floodriskslopesatriskoffailureangle35_4',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_Floodriskslopesatriskoffailureangle35_4_0
+            }
+        }
+        var pattern_Floodriskslopesatriskoffailureangle35_4_1 = new L.StripePattern({
+            weight: 0.52,
+            spaceWeight: 1.5,
+            color: '#ff7f00',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 225
+        });
+        pattern_Floodriskslopesatriskoffailureangle35_4_1.addTo(map);
+        function style_Floodriskslopesatriskoffailureangle35_4_1() {
+            return {
+                pane: 'pane_Floodriskslopesatriskoffailureangle35_4',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_Floodriskslopesatriskoffailureangle35_4_1
+            }
+        }
+        map.createPane('pane_Floodriskslopesatriskoffailureangle35_4');
+        map.getPane('pane_Floodriskslopesatriskoffailureangle35_4').style.zIndex = 404;
+        map.getPane('pane_Floodriskslopesatriskoffailureangle35_4').style['mix-blend-mode'] = 'normal';
+        var layer_Floodriskslopesatriskoffailureangle35_4 = new L.geoJson.multiStyle(json_Floodriskslopesatriskoffailureangle35_4, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_Floodriskslopesatriskoffailureangle35_4',
+            onEachFeature: pop_Floodriskslopesatriskoffailureangle35_4,
+            styles: [style_Floodriskslopesatriskoffailureangle35_4_0,style_Floodriskslopesatriskoffailureangle35_4_1,]
+        });
+        bounds_group.addLayer(layer_Floodriskslopesatriskoffailureangle35_4);
+        map.addLayer(layer_Floodriskslopesatriskoffailureangle35_4);
+        function pop_bdg_pmo_ifrc_resources_2018_0215_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name_short'] !== null ? Autolinker.link(String(feature.properties['name_short'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name_alt'] !== null ? Autolinker.link(String(feature.properties['name_alt'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['contact_name'] !== null ? Autolinker.link(String(feature.properties['contact_name'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['contact_bumber'] !== null ? Autolinker.link(String(feature.properties['contact_bumber'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['contact_email'] !== null ? Autolinker.link(String(feature.properties['contact_email'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm0'] !== null ? Autolinker.link(String(feature.properties['adm0'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm1'] !== null ? Autolinker.link(String(feature.properties['adm1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm2'] !== null ? Autolinker.link(String(feature.properties['adm2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['adm3'] !== null ? Autolinker.link(String(feature.properties['adm3'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['lat'] !== null ? Autolinker.link(String(feature.properties['lat'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['lon'] !== null ? Autolinker.link(String(feature.properties['lon'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bearing'] !== null ? Autolinker.link(String(feature.properties['bearing'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(String(feature.properties['type'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Partners'] !== null ? Autolinker.link(String(feature.properties['Partners'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Other Partners'] !== null ? Autolinker.link(String(feature.properties['Other Partners'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Zone/Block'] !== null ? Autolinker.link(String(feature.properties['Zone/Block'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Sector activity'] !== null ? Autolinker.link(String(feature.properties['Sector activity'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BDRCS/PNS'] !== null ? Autolinker.link(String(feature.properties['BDRCS/PNS'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Status'] !== null ? Autolinker.link(String(feature.properties['Status'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['camp_name'] !== null ? Autolinker.link(String(feature.properties['camp_name'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['camp_name_old'] !== null ? Autolinker.link(String(feature.properties['camp_name_old'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['camp_site_name_old'] !== null ? Autolinker.link(String(feature.properties['camp_site_name_old'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['site_no'] !== null ? Autolinker.link(String(feature.properties['site_no'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_bdg_pmo_ifrc_resources_2018_0215_5_0() {
+            return {
+                pane: 'pane_bdg_pmo_ifrc_resources_2018_0215_5',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/bdrcs-logo-v3.svg',
+            iconSize: [15.2, 15.2]
+        }),
+            }
+        }
+        map.createPane('pane_bdg_pmo_ifrc_resources_2018_0215_5');
+        map.getPane('pane_bdg_pmo_ifrc_resources_2018_0215_5').style.zIndex = 405;
+        map.getPane('pane_bdg_pmo_ifrc_resources_2018_0215_5').style['mix-blend-mode'] = 'normal';
+        var layer_bdg_pmo_ifrc_resources_2018_0215_5 = new L.geoJson(json_bdg_pmo_ifrc_resources_2018_0215_5, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_bdg_pmo_ifrc_resources_2018_0215_5',
+            onEachFeature: pop_bdg_pmo_ifrc_resources_2018_0215_5,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_bdg_pmo_ifrc_resources_2018_0215_5_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_bdg_pmo_ifrc_resources_2018_0215_5);
+        map.addLayer(layer_bdg_pmo_ifrc_resources_2018_0215_5);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/bdg_pmo_ifrc_resources_2018_0215_5.png" /> bdg_pmo_ifrc_resources_2018_0215': layer_bdg_pmo_ifrc_resources_2018_0215_5,'<img src="legend/Floodriskslopesatriskoffailureangle35_4.png" /> Flood risk - slopes at risk of failure (angle >35°)': layer_Floodriskslopesatriskoffailureangle35_4,'<img src="legend/Floodingoutlinehistoricalfeedback_3.png" /> Flooding outline (historical feedback)': layer_Floodingoutlinehistoricalfeedback_3,'<img src="legend/Campsites_2.png" /> Camp sites': layer_Campsites_2,'<img src="legend/Sitesnocurrentmovementactivities_1.png" /> Sites (no current movement activities)': layer_Sitesnocurrentmovementactivities_1,'<img src="legend/Siteswithmovementactivities_0.png" /> Sites (with movement activities)': layer_Siteswithmovementactivities_0,},{collapsed:false}).addTo(map);
+        map.on("zoomend", function(){
+
+            if (map.hasLayer(layer_Siteswithmovementactivities_0)) {
+                if (map.getZoom() <= 19 && map.getZoom() >= 12) {
+                    layer_Siteswithmovementactivities_0.eachLayer(function (layer) {
+                        layer.openTooltip();
+                    });
+                } else {
+                    layer_Siteswithmovementactivities_0.eachLayer(function (layer) {
+                        layer.closeTooltip();
+                    });
+                }
+            }
+            if (map.hasLayer(layer_Sitesnocurrentmovementactivities_1)) {
+                if (map.getZoom() <= 19 && map.getZoom() >= 12) {
+                    layer_Sitesnocurrentmovementactivities_1.eachLayer(function (layer) {
+                        layer.openTooltip();
+                    });
+                } else {
+                    layer_Sitesnocurrentmovementactivities_1.eachLayer(function (layer) {
+                        layer.closeTooltip();
+                    });
+                }
+            }
+            if (map.hasLayer(layer_Campsites_2)) {
+                if (map.getZoom() <= 19 && map.getZoom() >= 12) {
+                    layer_Campsites_2.eachLayer(function (layer) {
+                        layer.openTooltip();
+                    });
+                } else {
+                    layer_Campsites_2.eachLayer(function (layer) {
+                        layer.closeTooltip();
+                    });
+                }
+            }
+            if (map.hasLayer(layer_bdg_pmo_ifrc_resources_2018_0215_5)) {
+                if (map.getZoom() <= 19 && map.getZoom() >= 11) {
+                    layer_bdg_pmo_ifrc_resources_2018_0215_5.eachLayer(function (layer) {
+                        layer.openTooltip();
+                    });
+                } else {
+                    layer_bdg_pmo_ifrc_resources_2018_0215_5.eachLayer(function (layer) {
+                        layer.closeTooltip();
+                    });
+                }
+            }
+        });
+        setBounds();
+        var i = 0;
+        layer_Campsites_2.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['Camp_ID'] !== null?String('<div style="color: #676767; font-size: 12pt; font-weight: bold; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['Camp_ID']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Campsites_2'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_bdg_pmo_ifrc_resources_2018_0215_5.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['name'] !== null?String('<div style="color: #191919; font-size: 8pt; font-weight: bold; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_bdg_pmo_ifrc_resources_2018_0215_5'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+            if (map.hasLayer(layer_Siteswithmovementactivities_0)) {
+                if (map.getZoom() <= 19 && map.getZoom() >= 12) {
+                    layer_Siteswithmovementactivities_0.eachLayer(function (layer) {
+                        layer.openTooltip();
+                    });
+                } else {
+                    layer_Siteswithmovementactivities_0.eachLayer(function (layer) {
+                        layer.closeTooltip();
+                    });
+                }
+            }
+            if (map.hasLayer(layer_Sitesnocurrentmovementactivities_1)) {
+                if (map.getZoom() <= 19 && map.getZoom() >= 12) {
+                    layer_Sitesnocurrentmovementactivities_1.eachLayer(function (layer) {
+                        layer.openTooltip();
+                    });
+                } else {
+                    layer_Sitesnocurrentmovementactivities_1.eachLayer(function (layer) {
+                        layer.closeTooltip();
+                    });
+                }
+            }
+            if (map.hasLayer(layer_Campsites_2)) {
+                if (map.getZoom() <= 19 && map.getZoom() >= 12) {
+                    layer_Campsites_2.eachLayer(function (layer) {
+                        layer.openTooltip();
+                    });
+                } else {
+                    layer_Campsites_2.eachLayer(function (layer) {
+                        layer.closeTooltip();
+                    });
+                }
+            }
+            if (map.hasLayer(layer_bdg_pmo_ifrc_resources_2018_0215_5)) {
+                if (map.getZoom() <= 19 && map.getZoom() >= 11) {
+                    layer_bdg_pmo_ifrc_resources_2018_0215_5.eachLayer(function (layer) {
+                        layer.openTooltip();
+                    });
+                } else {
+                    layer_bdg_pmo_ifrc_resources_2018_0215_5.eachLayer(function (layer) {
+                        layer.closeTooltip();
+                    });
+                }
+            }
+        resetLabels([layer_Campsites_2,layer_bdgpmoifrcresources20180215_5]);
+        map.on("zoomend", function(){
+            resetLabels([layer_Campsites_2,layer_bdgpmoifrcresources20180215_5]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_Campsites_2,layer_bdgpmoifrcresources20180215_5]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_Campsites_2,layer_bdgpmoifrcresources20180215_5]);
+        });
+        </script>
+    </body>
+</html>
