@@ -38,12 +38,12 @@
         <script src="js/leaflet.markercluster.js"></script>
         <script src="data/Siteswithmovementactivities_0.js"></script>
         <script src="data/Campsites_1.js"></script>
-        <script src="data/Floodingoutlinehistoricalfeedback_2.js"></script>
-        <script src="data/Floodriskslopesatriskoffailureangle35_3.js"></script>
         <script src="data/BDRCSpointsofinterest_4.js"></script>
+		<script src="data/Floodriskslopesatriskoffailureangle35_3.js"></script>
+		<script src="data/Floodingoutlinehistoricalfeedback_2.js"></script>
         <script>
         var map = L.map('map', {
-            zoomControl:true, maxZoom:19, minZoom:10
+            zoomControl:true, maxZoom:18, minZoom:10
         }).fitBounds([[21.181859044,92.1448333287],[21.1868485803,92.1572465496]]);
         var hash = new L.Hash(map);
 map.attributionControl.setPrefix(false)
@@ -250,7 +250,7 @@ map.attributionControl.setPrefix(false)
             return this._div;
         };
         title.update = function () {
-            this._div.innerHTML = '<h2>BDRCS - IFRC PMO, flood risk assessment map</h2> <h6>Data sources:IFRC, IOM and UNHCR</h6>';
+            this._div.innerHTML = '<h2>BDRCS - IFRC PMO</h2> <p>flood risk assessment map</p><h6>Data sources:IFRC, IOM and UNHCR</h6>';
         };
         title.addTo(map);
         var baseMaps = {};
