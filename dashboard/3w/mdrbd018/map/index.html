@@ -238,7 +238,9 @@ map.attributionControl.setPrefix(false)
             },
         });
         var cluster_BDRCSpointsofinterest_4 = new L.MarkerClusterGroup({showCoverageOnHover: true,
-            spiderfyDistanceMultiplier: 3});
+                        disableClusteringAtZoom: 13,
+			maxClusterRadius: 80,
+			spiderfyDistanceMultiplier: 1});
         cluster_BDRCSpointsofinterest_4.addLayer(layer_BDRCSpointsofinterest_4);
 
         bounds_group.addLayer(layer_BDRCSpointsofinterest_4);
